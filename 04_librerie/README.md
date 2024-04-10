@@ -15,13 +15,16 @@ Una delle potenzialità maggiori di python è la presenza di un'infinità di lib
 1. [Librerie Python](#librerie-python)
 2. [Virtual environments](#virtual-environments)
    1. [PyCharm](#pycharm1)
-   2. [Terminale](#terminale1)
+   2. [VSCode](#vscode1)
+   3. [Terminale](#terminale1)
 3. [Installare dal Python Package Index (PyPi)](#installare-dal-python-package-index-pypi)
    1. [PyCharm](#pycharm2)
-   2. [Terminale](#terminale2)
+   2. [VSCode](#vscode2)
+   3. [Terminale](#terminale2)
 4. [Gestire le dipendenze](#gestire-le-dipendenze)
    1. [PyCharm](#pycharm3)
-   2. [Terminale](#terminale3)
+   2. [VSCode](#vscode3)
+   3. [Terminale](#terminale3)
 5. [Python Wheel](#python-wheel)
 6. [Riferimenti](#riferimenti)
 
@@ -93,6 +96,34 @@ Esempio:
 Per installare librerie nell'environment è possibile digitare i comandi pip all'interno di un terminale che ha l'environment attivo.
 Altrimenti è possibile aprire la scheda *Python Packages* in basso e utilizzare l'interfaccia grafica messa a disposizione da PyCharm.
 
+### VSCode <a name="vscode1"></a>
+Per creare un nuovo virtual environment tramite VSCode è necessario avere il l'estensione [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) installata
+Successivamente usare la combinazione di tasti ```ctrl+shift+P``` per aprire la command palette.
+Successivamente cerare il comando *Python: Create Environment...*.
+Quando richiesto dalla procedura, selezionare un environment di tipo *Venv* e l'interprete globale.
+
+<img src="img/add_environment_vscode.png" width="600" />
+
+Questo creerà la cartella .venv nella home del progetto, contenente l'environment.
+Una volta creato, tutti i nuovi terminali aperti in VSCode attiveranno l'environmemt automaticamente.
+
+Per controllarlo è possibile lanciare un interprete python nel terminale e utilizzare il modulo *sys* per stampare il percorso dell'interprete.
+Questo dovrà essere nella cartella *.venv* creata tramite la procedura.
+
+```bash
+python
+...
+>>> import sys
+>>> sys.executable
+'/home/Documents/lab/.venv/bin/python'
+```
+
+Per disattivare l'environment nel terminale corrente usare il seguente comando:
+```bash
+deactivate
+```
+
+Per cancellare l'environment bast cancellare la cartella che lo contiene.
 
 
 ### Terminale <a name="terminale1"></a>
@@ -160,6 +191,10 @@ plt.show()
 <img src="img/matplotlib_uninstall_pycharm.png" width="600" />
 
 
+### VSCode <a name="vscode2"></a>
+Seguire le istruzioni per il [Terminale](#terminale2) utilizzando il terminale di VSCode.
+
+
 ### Terminale <a name="terminale2"></a>
 Creare un cartella principale. Creare un nuovo virtual environment e attivarlo.
 Mostrare i *site packages* del virtual environment:
@@ -212,6 +247,10 @@ Se invece il file contiene dei requisiti non soddisfatti, viene chiesto se li si
 <img src="img/requirements_install_pycharm.png" width="600" />
 
 Utilizzare il file *requirements.txt* fornito insieme alla guida per installare i pacchetti in esso elencati.
+
+
+### VSCode <a name="vscode3"></a>
+Seguire le istruzioni per il [Terminale](#terminale3) utilizzando il terminale di VSCode.
 
 
 ### Terminale <a name="terminale3"></a>
